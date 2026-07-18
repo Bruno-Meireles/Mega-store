@@ -1,11 +1,56 @@
 .footer {
   background: var(--color-text);
-  color: #cbd5e1;
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
+  color: var(--color-surface);
+  margin-top: 4rem;
 }
 
-.footer strong {
-  color: #fff;
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.footer__brand,
+.footer__links,
+.footer__contact {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.footer p,
+.footer li {
+  color: var(--color-border);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a {
+  color: var(--color-border);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--color-secondary);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
 }

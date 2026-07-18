@@ -21,10 +21,7 @@ function Contact() {
   return (
     <section id="contato" className="section contact">
       <div className="container">
-        <h2 className="section-title">Sobre & Contato</h2>
-        <p className="section-subtitle">
-          Fale conosco — tire dúvidas ou envie sugestões
-        </p>
+
 
         <div className="contact__grid">
           <div className="contact__info">
@@ -42,6 +39,10 @@ function Contact() {
 
           <form className="contact__form" onSubmit={handleSubmit}>
             <div className="form-group">
+              <h3>Fale conosco</h3>
+              <p>
+                Fale conosco — tire dúvidas ou envie sugestões
+              </p>
               <label htmlFor="name">Nome</label>
               <input
                 id="name"

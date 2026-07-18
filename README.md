@@ -1,18 +1,108 @@
-# React + Vite
+# 🛍️ Mega Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação de e-commerce desenvolvida com **React** e **Vite**, consumindo dados da **Fake Store API**. O projeto simula uma loja virtual moderna, permitindo visualizar produtos, adicionar itens ao carrinho e navegar por uma interface responsiva.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* React
+* Vite
+* React Router DOM
+* Context API
+* CSS3
+* Fake Store API
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* Listagem de produtos
+* Consumo de API externa
+* Visualização de detalhes dos produtos
+* Carrinho de compras
+* Atualização da quantidade de itens
+* Remoção de produtos do carrinho
+* Cálculo automático do valor total
+* Layout responsivo
+* Navegação entre seções da página
 
-Note: This will impact Vite dev & build performances.
+## 📂 Estrutura do Projeto
 
-## Expanding the ESLint configuration
+```text
+src/
+├── components/
+├── context/
+├── pages/
+├── services/
+├── assets/
+└── App.jsx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ▶️ Como executar
+
+Clone o repositório:
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+Acesse a pasta do projeto:
+
+```bash
+cd mega-store
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
+
+```bash
+npm run dev
+```
+
+A aplicação ficará disponível em:
+
+```text
+http://localhost:5173
+```
+
+## 🌐 API
+
+Os produtos são obtidos através da **Fake Store API**.
+
+https://fakestoreapi.com/
+
+## 📸 Preview
+
+Adicione aqui um GIF ou imagem do projeto.
+
+Exemplo:
+
+```
+/preview.png
+```
+
+Depois basta utilizar:
+
+```md
+![Preview](./preview.png)
+```
+
+## 📌 Melhorias Futuras
+
+* Autenticação de usuários
+* Favoritos
+* Busca por produtos
+* Filtros por categoria
+* Paginação
+* Checkout
+* Integração com API própria
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Bruno Meireles**.
+
+LinkedIn: https://www.linkedin.com/in/brunomeireles/
+
+GitHub: https://github.com/SEU-USUARIO

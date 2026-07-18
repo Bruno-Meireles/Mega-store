@@ -15,7 +15,7 @@ function Products() {
     setError(null);
 
     try {
-      const data = await fetchProducts(8);
+      const data = await fetchProducts(16);
       setProducts(data);
     } catch (err) {
       setError(err.message);
@@ -39,7 +39,7 @@ function Products() {
       <div className="container">
         <h2 className="section-title">Nossos Produtos</h2>
         <p className="section-subtitle">
-          Catálogo atualizado via API externa (FakeStore API)
+          Catálogo 
         </p>
 
         {loading && (
