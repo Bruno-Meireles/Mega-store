@@ -1,7 +1,7 @@
 const FAKE_STORE_URL = "https://fakestoreapi.com/products";
 const VIACEP_URL = "https://viacep.com.br/ws";
 
-export async function fetchProducts(limit = 8) {
+export async function fetchProducts(limit = 16) {
   const response = await fetch(`${FAKE_STORE_URL}?limit=${limit}`);
 
   if (!response.ok) {

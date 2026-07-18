@@ -1,25 +1,34 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import Products from "./components/Products/Products";
-import Contact from "./components/Contact/Contact";
+import Cart from "./components/Cart/Cart";
 import CtaModal from "./components/CtaModal/CtaModal";
 import Footer from "./components/Footer/Footer";
+import HomePage from "./pages/HomePage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   const [showCtaModal, setShowCtaModal] = useState(false);
 
   return (
-    <>
-      <Header />
-      <main>
-        <Hero onCtaClick={() => setShowCtaModal(true)} />
-        <Products />
-        <Contact />
-      </main>
-      <Footer />
-      <CtaModal isOpen={showCtaModal} onClose={() => setShowCtaModal(false)} />
-    </>
+    <BrowserRouter>
+      <CartProvider>
+        <Header />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={<HomePage onCtaClick={() => setShowCtaModal(true)} />}
+            />
+            <Route path="/checkout" element={<CheckoutPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <Cart />
+        <CtaModal isOpen={showCtaModal} onClose={() => setShowCtaModal(false)} />
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

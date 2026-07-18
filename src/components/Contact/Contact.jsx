@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { fetchAddressByCep } from "../../services/api";
 import "./Contact.css";
 
 function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", cep: "", message: "" });
-  const [address, setAddress] = useState(null);
-  const [cepError, setCepError] = useState(null);
-  const [cepLoading, setCepLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitMessage, setSubmitMessage] = useState(null);
 
   const handleChange = (e) => {
@@ -14,28 +10,12 @@ function Contact() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCepSearch = async () => {
-    setCepLoading(true);
-    setCepError(null);
-    setAddress(null);
-
-    try {
-      const data = await fetchAddressByCep(form.cep);
-      setAddress(data);
-    } catch (err) {
-      setCepError(err.message);
-    } finally {
-      setCepLoading(false);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitMessage(
       `Obrigado, ${form.name}! Recebemos sua mensagem e entraremos em contato em ${form.email}.`
     );
-    setForm({ name: "", email: "", cep: "", message: "" });
-    setAddress(null);
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
@@ -43,7 +23,7 @@ function Contact() {
       <div className="container">
         <h2 className="section-title">Sobre & Contato</h2>
         <p className="section-subtitle">
-          Fale conosco ou consulte seu CEP com a API ViaCEP
+          Fale conosco — tire dúvidas ou envie sugestões
         </p>
 
         <div className="contact__grid">
@@ -86,37 +66,6 @@ function Contact() {
                 placeholder="seu@email.com"
               />
             </div>
-
-            <div className="contact__cep-row">
-              <div className="form-group">
-                <label htmlFor="cep">CEP</label>
-                <input
-                  id="cep"
-                  name="cep"
-                  type="text"
-                  value={form.cep}
-                  onChange={handleChange}
-                  placeholder="00000-000"
-                  maxLength={9}
-                />
-              </div>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={handleCepSearch}
-                disabled={cepLoading}
-              >
-                {cepLoading ? "Buscando..." : "Buscar CEP"}
-              </button>
-            </div>
-
-            {cepError && <p className="alert alert-error">{cepError}</p>}
-
-            {address && (
-              <div className="contact__address">
-                {address.logradouro}, {address.bairro} — {address.localidade}/{address.uf}
-              </div>
-            )}
 
             <div className="form-group">
               <label htmlFor="message">Mensagem</label>

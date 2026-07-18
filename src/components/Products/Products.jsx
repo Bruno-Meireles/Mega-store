@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import { BRL_RATE, formatPrice, useCart } from "../../context/CartContext";
 import { fetchProducts } from "../../services/api";
 import "./Products.css";
 
 function Products() {
+  const { addToCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [addedId, setAddedId] = useState(null);
 
   const loadProducts = async () => {
     setLoading(true);
@@ -24,6 +27,12 @@ function Products() {
   useEffect(() => {
     loadProducts();
   }, []);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setAddedId(product.id);
+    setTimeout(() => setAddedId(null), 1500);
+  };
 
   return (
     <section id="produtos" className="section">
@@ -57,8 +66,17 @@ function Products() {
                   <span className="product-card__category">{product.category}</span>
                   <h3 className="product-card__title">{product.title}</h3>
                   <p className="product-card__price">
-                    R$ {(product.price * 5.5).toFixed(2)}
+                    {formatPrice(product.price * BRL_RATE)}
                   </p>
+                  <button
+                    type="button"
+                    className={`btn btn-primary product-card__add ${
+                      addedId === product.id ? "product-card__add--added" : ""
+                    }`}
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    {addedId === product.id ? "Adicionado!" : "Adicionar ao carrinho"}
+                  </button>
                 </div>
               </article>
             ))}

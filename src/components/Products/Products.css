@@ -62,6 +62,21 @@
   font-size: 1.25rem;
   color: var(--color-secondary-dark);
   font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.product-card__add {
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+
+.product-card__add--added {
+  background-color: var(--color-success);
+}
+
+.product-card__add--added:hover {
+  background-color: #059669;
 }
 
 .products__status {
