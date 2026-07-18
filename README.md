@@ -73,15 +73,7 @@ Os produtos são obtidos através da **Fake Store API**.
 
 https://fakestoreapi.com/
 
-## 📸 Preview
 
-Adicione aqui um GIF ou imagem do projeto.
-
-Exemplo:
-
-```
-/preview.png
-```
 
 Depois basta utilizar:
 
@@ -89,20 +81,10 @@ Depois basta utilizar:
 ![Preview](./preview.png)
 ```
 
-## 📌 Melhorias Futuras
-
-* Autenticação de usuários
-* Favoritos
-* Busca por produtos
-* Filtros por categoria
-* Paginação
-* Checkout
-* Integração com API própria
-
 ## 👨‍💻 Autor
 
 Desenvolvido por **Bruno Meireles**.
 
 LinkedIn: https://www.linkedin.com/in/brunomeireles/
 
-GitHub: https://github.com/SEU-USUARIO
+GitHub: https://github.com/Bruno-Meireles
